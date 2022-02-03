@@ -1,6 +1,6 @@
+require('dotenv').config();
 const express=require('express');
 const mongoose=require('mongoose');
-const path=require('path')
 const cors=require('cors');
 const url='mongodb+srv://1234:1234@cluster0.6cq1m.mongodb.net/table?retryWrites=true&w=majority'
 const port=5500;
@@ -112,6 +112,6 @@ app.delete('/',async (req,res)=>{
         })}
 })
 
-app.listen(port,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("Server started successfully");
 })
